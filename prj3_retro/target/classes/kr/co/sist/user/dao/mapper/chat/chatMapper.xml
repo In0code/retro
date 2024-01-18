@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user.chat">
+<!-- 채팅 목록 조회 -->
+<select id="chatList" resultType="kr.co.sist.user.domain.chat.ChatListDomain" parameterType="String">
+SELECT SENDER, CONTEXT, TO_CHAR(SEND_DATE, 'MM"월" DD"일"') SEND_DATE, PCODE, BUYER_ID, ID 
+FROM ( 
+SELECT C.CONTEXT, C.SEND_DATE, C.SENDER, C.BUYER_ID, C.PCODE, P.ID
+FROM CHATTING C, PRODUCT P
+WHERE C.PCODE=P.PCODE AND (BUYER_ID=#{id} OR P.ID=#{id})
+ORDER BY SEND_DATE DESC
+) S
+</select>
+
+<!-- 채팅 상세 -->
+<select id="selectOneChat" resultType="kr.co.sist.user.domain.chat.ChatDetailDomain" parameterType="kr.co.sist.user.vo.chat.ChatDetailVO">
+SELECT C.CONTEXT, C.SENDER, C.SEND_DATE
+FROM CHATTING C, PRODUCT P
+WHERE C.PCODE=P.PCODE AND P.PCODE=#{pcode} AND ((C.SENDER=#{me} AND C.RECEIVER=#{you}) OR (C.SENDER=#{you} AND C.RECEIVER=#{me}))
+ORDER BY SEND_DATE
+</select>
+
+<!-- 상품 정보 -->
+<select id="chatPrdInfo" resultType="kr.co.sist.user.domain.chat.ChatPrdDomain" parameterType="String">
+SELECT PNAME, PRICE, IMG
+FROM PRODUCT
+WHERE PCODE=#{pcode}
+</select>
+
+<!-- 채팅 입력 -->
+<insert id="insertChat" parameterType="kr.co.sist.user.vo.chat.InsertChatVO">
+INSERT INTO CHATTING(CHATCODE, CONTEXT, PCODE, SENDER, BUYER_ID, RECEIVER)
+VALUES(
+(SELECT MAX(CHATCODE)+1 FROM CHATTING C),
+#{context},
+#{pcode},
+#{sender},
+(
+SELECT BUYER_ID 
+FROM CHATTING CC
+WHERE (SENDER=#{sender} AND RECEIVER=#{receiver}) OR (SENDER=#{receiver} AND RECEIVER=#{sender})
+GROUP BY BUYER_ID
+),
+#{receiver}
+)
+</insert>
+
+<!-- 채팅 시작 -->
+<select id="startNewChat" parameterType="kr.co.sist.user.vo.chat.InsertChatVO">
+INSERT INTO CHATTING(CHATCODE, CONTEXT, PCODE, SENDER, BUYER_ID, RECEIVER)
+VALUES(
+(SELECT MAX(CHATCODE)+1 FROM CHATTING C),
+#{context},
+#{pcode},
+#{sender},
+#{sender},
+#{receiver}
+)
+</select>
+</mapper>

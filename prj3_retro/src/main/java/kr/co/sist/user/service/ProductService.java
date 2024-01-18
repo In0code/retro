@@ -1,0 +1,140 @@
+package kr.co.sist.user.service;
+
+import java.util.List;
+
+import org.apache.ibatis.exceptions.PersistenceException;
+import org.json.simple.JSONObject;
+
+import kr.co.sist.user.dao.ProductDAO;
+import kr.co.sist.user.domain.MySalesDomain;
+import kr.co.sist.user.domain.ProductDomain;
+import kr.co.sist.user.vo.GoodsVO;
+import kr.co.sist.user.vo.ProductVO;
+
+public class ProductService {
+
+    private ProductDAO pDAO = ProductDAO.getInstance();
+    private static ProductService ps;
+
+    private ProductService() {
+
+    }
+
+    public static ProductService getInstance() {
+        if (ps == null) {
+            ps = new ProductService();
+        }
+        return ps;
+    }//getInstance
+    
+    public String pcode() {
+    	String pcode="";
+    	
+    	try {
+			pcode=pDAO.sellectPrdPcode();
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}//end catch
+    	
+    	return pcode;
+    }//pcode
+
+    /**
+     * 상품 등록
+     * 
+     * @param pVO
+     */
+    public int addProduct(ProductVO pVO){
+		int insertCnt= 0;
+		try {
+			insertCnt=pDAO.insertProduct(pVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}//end catch
+		
+		return insertCnt;
+	}//searchCategory
+    
+    
+    
+    public int searchWishCnt(String pcode) {
+    	int wishCnt=0;
+    	try {
+    		wishCnt=pDAO.selectWishCnt(pcode);
+    	} catch (PersistenceException pe) {
+    		pe.printStackTrace();
+    	}//end catch
+    	return wishCnt;
+    }//searchWishCnt
+    
+    public int searchCheck(ProductVO pVO) {
+		int cnt = 0;
+		
+		try {
+			cnt = pDAO.searchCheck(pVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return cnt;
+	}
+    
+    public ProductDomain searchProduct(ProductVO pVO) {
+    	ProductDomain search = null;
+    	try {
+    		search = pDAO.selectProduct(pVO);
+    	} catch (PersistenceException pe) {
+    		pe.printStackTrace();
+        }//end catch
+        return search;
+    }//searchProduct
+
+    public int editProduct(ProductVO pVO) {
+    	int editCnt= 0;
+		try {
+			editCnt=pDAO.updateProduct(pVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}//end catch
+		
+		return editCnt;
+    }//editProduct
+
+    public JSONObject editSaleok(String pcode) {
+        JSONObject editSaleJsonObj = new JSONObject();
+        editSaleJsonObj.put("resultData", false);
+        try {
+            int updateCnt = pDAO.updateSaleok(pcode);
+            editSaleJsonObj.put("resultData", true);
+        } catch (PersistenceException pe) {
+            pe.printStackTrace();
+            editSaleJsonObj.put("error", pe.getMessage()); // 예외 메시지 추가
+        }//end catch
+        return editSaleJsonObj;
+    }//editSaleok
+
+    public JSONObject cancelProduct(String pcode) {
+        JSONObject deletejsonObj = new JSONObject();
+        deletejsonObj.put("resultData", false);
+        try {
+            int deleteCnt = pDAO.deleteProduct(pcode);
+            deletejsonObj.put("resultData", true);
+        } catch (PersistenceException pe) {
+            pe.printStackTrace();
+            deletejsonObj.put("error", pe.getMessage()); // 예외 메시지 추가
+        }//end catch
+        return deletejsonObj;
+    }//cancelProduct
+    
+
+	public List<MySalesDomain> searchBuyerAllInfo(String pcode){
+		 List<MySalesDomain> searchAllInfo=null;
+		 try {
+			 searchAllInfo = pDAO.selectBuyerAllInfo(pcode);
+			}catch(PersistenceException pe) {
+				pe.printStackTrace();
+			}//end catch
+			return searchAllInfo;
+	}//searchBuyerAllInfo
+
+}//class
