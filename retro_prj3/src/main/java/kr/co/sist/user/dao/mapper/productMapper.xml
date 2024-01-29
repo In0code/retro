@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 인영 - 사용자 : 상품 등록/수정/상세/삭제 Mapper -->
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -7,7 +8,7 @@
 	<select id="createPcode" resultType="String">
 	select 'P' || lpad(pcode_seq.nextval, 5, 0) as pcode from dual
 	</select>
-	<!-- 카테고리 조회 조회 -->
+	<!-- 카테고리 조회 -->
 	<insert id="insertProduct" parameterType="pVO"  >
 		insert into PRODUCT (PCODE, PNAME, CONTEXT, IMG, 
 			<if test="img2 != null and img2 != ''">

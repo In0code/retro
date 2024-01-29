@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ page info=""%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- 인영 - 사용자 : 판매 후기 작성 완료 JSP -->
+
 <!DOCTYPE html>
 <html>
 <head>

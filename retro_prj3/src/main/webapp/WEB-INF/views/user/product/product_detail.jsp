@@ -3,6 +3,9 @@
 <%@ page info=""%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!-- 인영 - 사용자 : 상품 상세 JSP -->
+
 <!DOCTYPE html>
 <html>
 <head>

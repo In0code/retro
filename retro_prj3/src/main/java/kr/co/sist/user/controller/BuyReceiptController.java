@@ -1,5 +1,5 @@
 package kr.co.sist.user.controller;
-
+//인영 - 사용자 : 상품 상태 변경 선택 Controller
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;

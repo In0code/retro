@@ -1,5 +1,5 @@
 package kr.co.sist.user.controller;
-
+//인영 - 사용자 : 관심상품 Controller
 import java.util.List;
 
 import javax.servlet.http.HttpSession;

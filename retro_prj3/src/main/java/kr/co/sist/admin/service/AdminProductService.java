@@ -1,5 +1,5 @@
 package kr.co.sist.admin.service;
-
+//인영 - 관리자 : 상품관리 Service
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -40,10 +40,10 @@ public class AdminProductService {
 			cnt = apDAO.productTotalCnt(brVO);
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
-		}
+		}//end catch
 
 		return cnt;
-	}
+	}//productTotalCnt
 
 	/**
 	 * 전체 상품 조회 service

@@ -1,5 +1,5 @@
 package kr.co.sist.admin.controller;
-
+// 인영 - 관리자 : 상품관리 Controller
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +26,7 @@ public class AdminProductController {
 		int currentPage = 1;
 		if(page != null && !"".equals(page)) {
 			currentPage = Integer.parseInt(page);
-		}
+		}//end if
 		
 		int totalRecode = aps.productTotalCnt(brVO);
 		

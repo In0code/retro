@@ -1,5 +1,5 @@
 package kr.co.sist.user.dao;
-
+//인영 - 사용자 : 상품 상태 변경 선택 DAO
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 

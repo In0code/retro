@@ -1,5 +1,5 @@
 package kr.co.sist.user.controller;
-
+//인영 - 사용자 : 상품 등록/수정/상세/삭제 Controller
 import java.io.File;
 import java.io.IOException;
 
@@ -58,7 +58,6 @@ public class ProductController {
 					maxSize, "UTF-8",new DefaultFileRenamePolicy());
 			
 			String id = (String)session.getAttribute("id");
-			
 			
 			
 			pVO.setPname(mr.getParameter("pname"));
@@ -182,7 +181,7 @@ public class ProductController {
 			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(pcode));
 			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
 			model.addAttribute("searchChk", ps.searchCheck(pVO));
-		}
+		}//end if
 		
 		return "user/product/product_detail";
 	}//productDetail

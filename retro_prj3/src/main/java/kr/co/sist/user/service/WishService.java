@@ -1,5 +1,5 @@
 package kr.co.sist.user.service;
-
+//인영 - 사용자 : 관심상품 Serbice
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -21,9 +21,10 @@ public class WishService {
 	    public static WishService getInstance() {
 	        if (ws == null) {
 	            ws = new WishService();
-	        }
+	        }//end if
 	        return ws;
 	    }//getInstance
+	    
 	    
 	    /**
 	     * 찜 리스트 전체 레코드 수 조회
@@ -40,6 +41,13 @@ public class WishService {
 	        return selectAllCnt;
 	    }//searchWishCnt
 	    
+	    
+	    /**
+	     * 관심상품 추가
+	     * 
+	     * @param wVO
+	     * @return
+	     */
 	    public JSONObject addWish(WishVO wVO) {
 	    	
 	        JSONObject addjsonObj = new JSONObject();
@@ -54,6 +62,13 @@ public class WishService {
 	        return addjsonObj;
 	    }//addWish
 	    
+	    
+	    /**
+	     * 이미 관심상품 추가된 상품인지 확인
+	     * 
+	     * @param wVO
+	     * @return
+	     */
 	    public int getChkPcode(WishVO wVO) {
 	    	int resultPcode=0;
 	    	try {
@@ -63,6 +78,7 @@ public class WishService {
 	        }//end catch
 	        return resultPcode;
 	    }//getPcode
+	    
 	    
 	    /**
 	     * 찜 리스트 전체 조회

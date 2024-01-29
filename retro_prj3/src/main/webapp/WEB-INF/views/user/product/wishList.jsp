@@ -7,6 +7,9 @@
     <c:redirect url="http://localhost/retro_prj/user/login_frm.do"/>
     </c:if> 
 <!DOCTYPE html>
+
+<!-- 인영 - 사용자 : 관심상품 JSP -->
+
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

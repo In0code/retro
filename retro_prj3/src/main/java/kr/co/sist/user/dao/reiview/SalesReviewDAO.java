@@ -1,5 +1,5 @@
 package kr.co.sist.user.dao.reiview;
-
+// 인영 - 사용자 : 판매 후기 DAO
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 
@@ -23,6 +23,13 @@ public class SalesReviewDAO {
 		return srDAO;
 	}// getInstance
 	
+	/**
+	 * 판매 후기 등록
+	 * 
+	 * @param rVO
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int insertSaleReview(ReviewVO rVO) throws PersistenceException{
 		int insertcnt = 0;
 		
@@ -39,6 +46,13 @@ public class SalesReviewDAO {
 		return insertcnt;
 	}//insertSaleReview
 	
+	/**
+	 * 구매자 정보 조회
+	 * 
+	 * @param rVO
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public MySalesDomain selectBuyerInfo(ReviewVO rVO) throws PersistenceException{
 		MySalesDomain msd = null;
 		

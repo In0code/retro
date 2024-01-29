@@ -1,5 +1,5 @@
 package kr.co.sist.user.dao;
-
+//인영 - 사용자 : 상품 등록/수정/상세/삭제 DAO
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -27,6 +27,11 @@ public class ProductDAO {
 		return pDAO;
 	}// getInstance
 
+	/**
+	 * pcode 생성
+	 * 
+	 * @return
+	 */
 	public String sellectPrdPcode() {
 		String pcode = "";
 
@@ -39,8 +44,17 @@ public class ProductDAO {
 		} // finally
 
 		return pcode;
-	}
+	}//sellectPrdPcode
 
+	/**
+	 * 판매자가 보는 자기 자신의 상품 상세 페이지인지, 
+	 * 구매자가 보는 상품 상세 페이지인지를 구별하기 위함
+	 * => 누가 보는 상품 상세 페이지인지에 따라 페이지가 다르게 보여짐
+	 * 
+	 * @param pVO
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int searchCheck(ProductVO pVO) throws PersistenceException {
 		int cnt = 0;
 		
@@ -49,7 +63,7 @@ public class ProductDAO {
 		cnt = ss.selectOne("user.product.selectCheck",pVO);
 		
 		return cnt;
-	}
+	}//searchCheck
 	
 	/**
 	 * 상품 등록
@@ -95,6 +109,12 @@ public class ProductDAO {
 		return search;
 	}// selectProduct
 
+	/**
+	 * 상품 수정
+	 * @param pVO
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int updateProduct(ProductVO pVO) throws PersistenceException {
 
 		int updateCnt = 0;
@@ -115,6 +135,13 @@ public class ProductDAO {
 		return updateCnt;
 	}// updateProduct
 
+	/**
+	 * 상품 판매 완료 처리
+	 * 
+	 * @param pcode
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int updateSaleok(String pcode) throws PersistenceException {
 
 		int updateSaleCnt = 0;
@@ -135,6 +162,13 @@ public class ProductDAO {
 		return updateSaleCnt;
 	}// updateSaleok
 
+	/**
+	 * 상품 삭제
+	 * 
+	 * @param pcode
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int deleteProduct(String pcode) throws PersistenceException {
 		int deleteCnt = 0;
 
@@ -153,6 +187,14 @@ public class ProductDAO {
 		return deleteCnt;
 	}// deleteProduct
 
+	/**
+	 * 상품에 대해서 채팅 온 사람들의 정보 조회
+	 * => 거래한 상대를 선택하고 판매 후기를 작성하기 위함
+	 * 
+	 * @param pcode
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public List<MySalesDomain> selectBuyerAllInfo(String pcode) throws PersistenceException {
 
 		List<MySalesDomain> selectInfo = null;
@@ -167,6 +209,13 @@ public class ProductDAO {
 
 	}// selectBuyerAllInfo
 
+	/**
+	 * 상품에 대해 관심상품 등록한 횟수
+	 * 
+	 * @param pcode
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int selectWishCnt(String pcode) throws PersistenceException {
 		int wishCnt = 0;
 		MybatisHandler mbh = MybatisHandler.getInstance();

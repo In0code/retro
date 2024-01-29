@@ -1,5 +1,5 @@
 package kr.co.sist.user.service.reiview;
-
+//인영 - 사용자 : 판매 후기 Service
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,12 @@ public class SaleReviewService {
 	    }//getInstance
 
 	
+	/**
+	 * 판매 후기 작성 등록
+	 * 
+	 * @param rVO
+	 * @return
+	 */
 	public int addSaleReview(ReviewVO rVO) {
 		int cnt = 0;
 		
@@ -45,6 +51,12 @@ public class SaleReviewService {
 	}//addSaleReview
 	
 	
+	/**
+	 * 구매자 정보 조회
+	 * 
+	 * @param rVO
+	 * @return
+	 */
 	public MySalesDomain searchBuyerInfo(ReviewVO rVO) {
 		MySalesDomain searchInfo = null;
 		

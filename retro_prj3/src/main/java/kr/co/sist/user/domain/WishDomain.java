@@ -1,5 +1,5 @@
 package kr.co.sist.user.domain;
-
+//인영 - 사용자 : 관심상품 Domain
 import java.sql.Date;
 
 import lombok.Getter;

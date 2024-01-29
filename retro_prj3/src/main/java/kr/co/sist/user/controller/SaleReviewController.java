@@ -1,5 +1,5 @@
 package kr.co.sist.user.controller;
-
+//인영 - 사용자 : 판매 후기 Controller
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;

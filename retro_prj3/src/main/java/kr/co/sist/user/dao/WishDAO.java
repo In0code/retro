@@ -1,5 +1,5 @@
 package kr.co.sist.user.dao;
-
+//인영 - 사용자 : 관심 상품 DAO
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -46,6 +46,14 @@ public class WishDAO {
 		return selectAllCnt;
 	}// selectWishCnt
 	
+	
+	/**
+	 * 이미 관심상품 추가된 상품인지 확인
+	 * 
+	 * @param wVO
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int getChkPcode(WishVO wVO) throws PersistenceException {
 		int resultPcode=0;
 		
@@ -58,6 +66,7 @@ public class WishDAO {
 	    }//finally
 		return resultPcode;
 	}//getChkPcode
+	
 	
 	/**
 	 * 찜 추가
@@ -83,6 +92,7 @@ public class WishDAO {
 		return insertCnt;
 	}// insertWish
 	
+	
 	/**
 	 * 찜 리스트 전체 조회
 	 * 
@@ -102,6 +112,13 @@ public class WishDAO {
 		return allWishList;
 	}// selectAllWish
 	
+	
+	/**
+	 * 찜 삭제
+	 * @param pcode
+	 * @return
+	 * @throws PersistenceException
+	 */
 	public int deleteWish(String pcode) throws PersistenceException {
 	    int deleteCnt=0;
 		

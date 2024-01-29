@@ -1,5 +1,5 @@
 package kr.co.sist.user.vo;
-
+//인영 - 사용자 : 상품 VO
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

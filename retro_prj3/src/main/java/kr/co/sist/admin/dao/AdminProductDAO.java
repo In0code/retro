@@ -1,5 +1,5 @@
 package kr.co.sist.admin.dao;
-
+//인영 - 관리자 : 상품관리 DAO
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -18,7 +18,7 @@ public class AdminProductDAO {
 
 	private AdminProductDAO() {
 		configPath = "kr/co/sist/common/dao/mybatis-config.xml";
-	}
+	}//AdminProductDAO
 
 	public static AdminProductDAO getInstance() {
 		if (apDAO == null) {

@@ -1,5 +1,5 @@
 package kr.co.sist.user.service;
-
+//인영 - 사용자 : 상품 Service
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -57,6 +57,12 @@ public class ProductService {
     
     
     
+    /**
+     * 관심상품 등록 수
+     * 
+     * @param pcode
+     * @return
+     */
     public int searchWishCnt(String pcode) {
     	int wishCnt=0;
     	try {
@@ -67,6 +73,12 @@ public class ProductService {
     	return wishCnt;
     }//searchWishCnt
     
+    /**
+     * 판매자와 구매자를 구별하여 상세 페이지를 보여줌
+     * 
+     * @param pVO
+     * @return
+     */
     public int searchCheck(ProductVO pVO) {
 		int cnt = 0;
 		
@@ -74,11 +86,17 @@ public class ProductService {
 			cnt = pDAO.searchCheck(pVO);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
-		}
+		}//end catch
 		
 		return cnt;
-	}
+	}//searchCheck
     
+    /**
+     * 상품 조회
+     * 
+     * @param pVO
+     * @return
+     */
     public ProductDomain searchProduct(ProductVO pVO) {
     	ProductDomain search = null;
     	try {
@@ -89,6 +107,12 @@ public class ProductService {
         return search;
     }//searchProduct
 
+    /**
+     * 상품 수정
+     * 
+     * @param pVO
+     * @return
+     */
     public int editProduct(ProductVO pVO) {
     	int editCnt= 0;
 		try {
@@ -100,6 +124,12 @@ public class ProductService {
 		return editCnt;
     }//editProduct
 
+    /**
+     * 상품 판매 완료 처리
+     * 
+     * @param pcode
+     * @return
+     */
     public JSONObject editSaleok(String pcode) {
         JSONObject editSaleJsonObj = new JSONObject();
         editSaleJsonObj.put("resultData", false);
@@ -113,6 +143,12 @@ public class ProductService {
         return editSaleJsonObj;
     }//editSaleok
 
+    /**
+     * 상품 삭제
+     * 
+     * @param pcode
+     * @return
+     */
     public JSONObject cancelProduct(String pcode) {
         JSONObject deletejsonObj = new JSONObject();
         deletejsonObj.put("resultData", false);
@@ -127,6 +163,12 @@ public class ProductService {
     }//cancelProduct
     
 
+	/**
+	 * 상품에 대해서 채팅 온 사람들의 정보 조회
+	 * 
+	 * @param pcode
+	 * @return
+	 */
 	public List<MySalesDomain> searchBuyerAllInfo(String pcode){
 		 List<MySalesDomain> searchAllInfo=null;
 		 try {
