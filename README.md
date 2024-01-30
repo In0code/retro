@@ -35,7 +35,8 @@
 
 - 상품 판매 후기 작성 ( 담당 )
 
-![image](https://github.com/In0code/retro/assets/137425054/8e148d7f-3a23-47ca-a667-6406d9746e6e)
+![image](https://github.com/In0code/retro/assets/137425054/42159e62-c519-422f-911e-f776a5fd8316)
+
 
 -----
 
