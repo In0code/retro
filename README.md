@@ -3,8 +3,10 @@
 -메인
 ![image](https://github.com/In0code/retro/assets/137425054/263269b9-b038-43b7-9453-6f3d95732104)
 
+-------------------------------------------------------------------------------------------------
 -상품 등록
-![image](https://github.com/In0code/retro/assets/137425054/f15c8fac-af0a-4d0d-be60-a8b3e8c76160)
+![image](https://github.com/In0code/retro/assets/137425054/d9924705-19af-4aa8-8e68-2a81b57c0744)
+
 
 -상품 상세
 ![image](https://github.com/In0code/retro/assets/137425054/ffd2ea3b-9b85-49b2-908e-e733e49d336d)
