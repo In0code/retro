@@ -26,13 +26,18 @@
 
 - 상품 상태 변경 ( 담당 )
 
-![image](https://github.com/In0code/retro/assets/137425054/8e148d7f-3a23-47ca-a667-6406d9746e6e)
+![image](https://github.com/In0code/retro/assets/137425054/d0011f23-1024-4873-90e2-20586aea9dbc)
+
 
 
 ----------------------------------------------------
 
 
 - 상품 판매 후기 작성 ( 담당 )
+
+![image](https://github.com/In0code/retro/assets/137425054/8e148d7f-3a23-47ca-a667-6406d9746e6e)
+
+-----
 
 ![image](https://github.com/In0code/retro/assets/137425054/984b5bb7-d865-46c8-8e08-4c73fa18c440)
 
