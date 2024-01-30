@@ -50,7 +50,8 @@
 
 - 상품 관리 리스트 ( 담당 )
 
-![image](https://github.com/In0code/retro/assets/137425054/d424120a-f0c2-4626-bb2c-2a993eafad6c)
+![image](https://github.com/In0code/retro/assets/137425054/556aa0f3-2cd2-4f0b-83d5-b77d6862eebf)
+
 
 
 ----------------------------------------------------
