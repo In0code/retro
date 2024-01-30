@@ -70,4 +70,6 @@
 
 ![image](https://github.com/In0code/retro/assets/137425054/e476a6d2-834d-435e-977a-4a5a9924d259)
 
+'상품 등록 상태'가 '등록'에서 '삭제(관리자)'로 변경
+
 ![image](https://github.com/In0code/retro/assets/137425054/cbc2275e-9d31-4b28-9ae8-b1f187892b73)
