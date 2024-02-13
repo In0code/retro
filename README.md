@@ -1,4 +1,4 @@
-**RE:TRO |  중고 거래 플랫폼**
+
 
 ![image](https://github.com/In0code/retro/assets/137425054/940adb96-7806-4c72-84df-db1e16dd688c)
 
