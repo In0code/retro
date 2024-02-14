@@ -11,4 +11,4 @@ public class AdminProductVO {
 
 	private String pcancel, pcode;
 	
-}
+}//AdminProductVO
