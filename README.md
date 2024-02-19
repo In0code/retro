@@ -24,4 +24,5 @@
 
 ![image](https://github.com/In0code/retro/assets/137425054/ef8b6892-3e0f-40fa-8062-775cc5f049ec)
 
-![Uploading image.png…]()
+![image](https://github.com/In0code/retro/assets/137425054/deeb1919-0781-4893-876f-64fd32209eaf)
+
